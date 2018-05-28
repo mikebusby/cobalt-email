@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+node_modules/
+.sass-cache/
+npm-debug.log
+www/
+vendor/
+.idea/
+.vscode/
+yarn-error.log
