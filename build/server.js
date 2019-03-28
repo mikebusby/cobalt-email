@@ -4,7 +4,8 @@
 
 module.exports = function(gulp, plugins, config) {
   return function () {
-    gulp.src(config.buildPath)
+    gulp
+      .src(config.buildPath)
       .pipe(plugins.webserver({
         port: 1337,
         fallback: 'template.html',

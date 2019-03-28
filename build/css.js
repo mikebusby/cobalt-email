@@ -15,7 +15,8 @@ const cssnano = require('cssnano');
 
 module.exports = function(gulp, plugins, config) {
   return function() {
-    return gulp.src(config.srcPath + '/css/main.css')
+    return gulp
+      .src(config.srcPath + '/css/main.css')
       .pipe(plugins.plumber({
         errorHandler: function(err) {
           plugins.notify.onError({
