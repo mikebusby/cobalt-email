@@ -20,6 +20,7 @@ module.exports = function(gulp, plugins, config) {
       )
       .pipe(
         inlineCSS({
+          applyTableAttributes: true,
           preserveMediaQueries: true
         })
       )
