@@ -1,5 +1,4 @@
 // ++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ++
-//
 //     _____     __        ____    ____           _ __
 //    / ___/__  / /  ___ _/ / /_  / __/_ _  ___ _(_) /
 //   / /__/ _ \/ _ \/ _ `/ / __/ / _//  ' \/ _ `/ / / 
@@ -26,7 +25,7 @@ let config = {
   cssType: 'css' // CSS (PostCSS) or SCSS
 }
 
-// Main Tasks
+// Main tasks
 gulp.task('html', require('./build/html')(gulp, plugins, config));
 gulp.task('styles', require('./build/' + config.cssType)(gulp, plugins, config));
 gulp.task('inline-css', require('./build/inline-css')(gulp, plugins, config));
