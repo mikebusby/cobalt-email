@@ -20,9 +20,6 @@ module.exports = function(gulp, plugins, config) {
       )
       .pipe(
         inlineCSS({
-          applyStyleTags: true,
-          applyLinkTags: true,
-          removeLinkTags: false,
           preserveMediaQueries: true
         })
       )
