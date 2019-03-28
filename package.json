@@ -1,19 +1,42 @@
 {
   "name": "cobalt-email",
-  "version": "0.0.1",
-  "description": "Cobalt",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/MikeBusby/cobalt-email.git"
+  },
+  "scripts": {
+    "dev": "gulp"
+  },
+  "version": "2.0.0",
+  "description": "Cobalt Email Build",
   "main": "gulpfile.js",
   "devDependencies": {
-    "gulp": "^3.8.10",
-    "gulp-concat": "^2.4.1",
-    "gulp-file-include": "^0.8.0",
+    "cssnano": "^4.1.10",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-file-include": "^2.0.1",
+    "gulp-htmlmin": "^5.0.1",
     "gulp-filter": "^2.0.0",
     "gulp-inline-css": "^3.1.2",
-    "gulp-load-plugins": "^0.8.0",
-    "gulp-notify": "^1.8.0",
-    "gulp-uglify": "^1.0.1",
-    "gulp-webserver": "^0.9.0"
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-webserver": "^0.9.0",
+    "imagemin-giflossy": "^5.1.10",
+    "imagemin-mozjpeg": "^7.0.0",
+    "imagemin-pngquant": "^6.0.0",
+    "imagemin-zopfli": "^5.1.0",
+    "postcss-assets": "^5.0.0",
+    "postcss-conditionals": "^2.1.0",
+    "postcss-import": "^12.0.1",
+    "postcss-nested": "^4.1.2",
+    "postcss-preset-env": "^6.6.0",
+    "postcss-sassy-mixins": "^2.1.0",
+    "postcss-scss": "^2.0.0",
+    "rucksack-css": "^1.0.2",
+    "run-sequence": "^2.2.1"
   },
-  "author": "Mike Bubsby (mikebusby.ca)",
+  "author": "Mike Busby (busby.design)",
   "license": "MIT"
 }

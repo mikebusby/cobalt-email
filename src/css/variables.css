@@ -1,0 +1,28 @@
+// ++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ++
+//
+//  Cobalt Email
+//  Variables
+//
+// ++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ++
+
+:root {
+  --black:                               #000;
+  --white:                               #fff;
+
+  --primary-brand:                       #03A9F4;
+  --secondary-brand:                     #FF9800;
+
+  --dark-text-color:                     #191E34;
+  --medium-text-color:                   #5F6477;
+  --light-text-color:                    #A7AAB8;
+
+  --link-color:                          #5677FC;
+
+  --font-family:                           'Lato', Arial, Helvetica, sans-serif;
+  --light-font-weight:                     300;
+  --regular-font-weight:                   400;
+  --semibold-font-weight:                  600;
+  --bold-font-weight:                      700;
+
+  --mobile-edge:                           20px;
+}

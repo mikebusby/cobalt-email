@@ -1,110 +1,58 @@
 // ++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ++
 //
-//
-//     _____     __        ____
-//    / ___/__  / /  ___ _/ / /_
-//   / /__/ _ \/ _ \/ _ `/ / __/
-//   \___/\___/_.__/\_,_/_/\__/
+//     _____     __        ____    ____           _ __
+//    / ___/__  / /  ___ _/ / /_  / __/_ _  ___ _(_) /
+//   / /__/ _ \/ _ \/ _ `/ / __/ / _//  ' \/ _ `/ / / 
+//   \___/\___/_.__/\_,_/_/\__/ /___/_/_/_/\_,_/_/_/  
 //
 //   Cobalt is built by Mike Busby
 //
-//   hello@mikebusby.ca
+//   hello@mikebusby.email
 //   @mikebusby
-//
 //
 // ++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ++
 
 // Require Gulp & Plugins
-var gulp            = require("gulp");
-var gulpLoadPlugins = require("gulp-load-plugins");
+const gulp = require('gulp');
+const runSequence = require('run-sequence');
+const plugins = require('gulp-load-plugins')();
 
-// Rename some plugins
-var plugins = gulpLoadPlugins({
-  rename: {
-    "gulp-bower": "bower",
-    "gulp-file-include": "fileinclude",
-    "gulp-autoprefixer": "autoprefixer",
-    "gulp-inline-css": "inlinecss"
-  }
-});
-
-// Config Variables
-var config = {
-  srcPath:   "src/",
-  buildPath: "www/",
-  tplPath:   "src/tpl/"
+// Config variables
+let config = {
+  srcPath: 'src/',
+  buildPath: 'www/',
+  staticPath: 'src/static/',
+  tplPath: 'src/tpl/',
+  cssType: 'css' // CSS (PostCSS) or SCSS
 }
 
-// Output errors to console
-function errorLog(error) {
-  console.error.bind(error);
-  plugins.notify().write(error);
-  this.emit("end");
-}
+// Main Tasks
+gulp.task('html', require('./build/html')(gulp, plugins, config));
+gulp.task('styles', require('./build/' + config.cssType)(gulp, plugins, config));
+gulp.task('inline-css', require('./build/inline-css')(gulp, plugins, config));
+gulp.task('copy-img', require('./build/copy-img')(gulp, config));
+gulp.task('web-server', require('./build/server')(gulp, plugins, config));
 
-
-
-//
-// HTML Compliation
-//
-gulp.task('html', function() {
-  gulp.src([config.tplPath + "*.html"])
-    .pipe(plugins.fileinclude({
-      prefix: '@@',
-      basepath: '@file'
-    }))
-    .pipe(plugins.inlinecss({
-      applyStyleTags: true,
-      applyLinkTags: true,
-      removeLinkTags: true,
-      preserveMediaQueries: true
-    }))
-    .pipe(gulp.dest(config.buildPath));
+// Watch file changes
+gulp.task('watch', function() {
+  gulp.watch(config.srcPath + '/**/*', ['update']);
+  gulp.watch(config.staticPath + 'img/*', ['copy-img']);
 });
 
-
-
-//
-// Web Server
-//
-gulp.task("webserver", function() {
-  gulp.src(config.buildPath)
-    .pipe(plugins.webserver({
-      port: 1337,
-      livereload: true
-    }));
+// Update build files on file change
+gulp.task('update', function(callback) {
+  runSequence('styles', 'html', 'inline-css', callback);
 });
 
-
-
-//
-// Move Images to build
-//
-gulp.task("copyimg", function() {
-  gulp.src(config.srcPath + "/img/*")
-  .pipe(gulp.dest(config.buildPath + "img/"));
+// Run development tasks
+gulp.task('default', function(callback) {
+  runSequence(
+    'styles',
+    'html',
+    'inline-css',
+    'copy-img',
+    'watch',
+    'web-server',
+    callback
+  );
 });
-
-
-
-
-//
-// Watch File changes
-//
-gulp.task("watch", function() {
-  gulp.watch(config.srcPath + "img/*", ["copyimg"]);
-  gulp.watch(config.tplPath + "**/*.html", ["html"]);
-  gulp.watch(config.srcPath + "css/*.css", ["html"]);
-});
-
-
-
-//
-// Run Tasks | $ gulp
-//
-gulp.task("default", [
-  "html",
-  "copyimg",
-  "watch",
-  "webserver"
-]);
