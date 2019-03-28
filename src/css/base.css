@@ -1,0 +1,32 @@
+// ++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ++
+//
+//  Cobalt Email
+//  Base Styles & Helpers
+//
+// ++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ++
+
+.font {
+  font-family: var(--font-family);
+}
+
+.dark-text-color {
+  color: var(--dark-text-color);
+}
+
+.medium-text-color {
+  color: var(--medium-text-color);
+}
+
+.mobile-show {
+  display: none;
+}
+
+.outer-wrapper {
+  max-width: var(--outer-wrapper-width);
+}
+
+.responsive-img {
+  width: 100%;
+  max-width: 750px;
+  height: auto;
+}
