@@ -19,7 +19,7 @@ const plugins = require('gulp-load-plugins')();
 // Config variables
 let config = {
   srcPath: 'src/',
-  buildPath: 'www/',
+  buildPath: 'dist/',
   staticPath: 'src/static/',
   tplPath: 'src/tpl/',
   cssType: 'css' // CSS (PostCSS) or SCSS

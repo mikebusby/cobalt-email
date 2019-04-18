@@ -11,7 +11,7 @@ module.exports = function(gulp, plugins, config) {
         fallback: 'template.html',
         directoryListing: {
           enable: true,
-          path: 'www'
+          path: 'dist'
         },
         livereload: true
       })

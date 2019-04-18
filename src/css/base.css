@@ -5,27 +5,27 @@
 //
 // ++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ++
 
-.font {
+.h-font {
   font-family: var(--font-family);
 }
 
-.dark-text-color {
+.h-dark-text-color {
   color: var(--dark-text-color);
 }
 
-.medium-text-color {
+.h-medium-text-color {
   color: var(--medium-text-color);
 }
 
-.mobile-show {
+.h-mobile-show {
   display: none;
 }
 
-.outer-wrapper {
+.l-outer-wrapper {
   max-width: var(--outer-wrapper-width);
 }
 
-.responsive-img {
+.h-responsive-img {
   width: 100%;
   max-width: 750px;
   height: auto;
