@@ -8,6 +8,7 @@
 @import 'variables';
 @import 'resets';
 @import 'base';
+@import 'typography';
 
 // Components
 @import 'components/preheader';

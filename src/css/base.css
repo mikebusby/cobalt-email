@@ -5,28 +5,41 @@
 //
 // ++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ++
 
-.h-font {
-  font-family: var(--font-family);
-}
-
-.h-dark-text-color {
-  color: var(--dark-text-color);
-}
-
-.h-medium-text-color {
-  color: var(--medium-text-color);
+.l-outer-wrapper {
+  max-width: var(--outer-wrapper-width);
 }
 
 .h-mobile-show {
   display: none;
 }
 
-.l-outer-wrapper {
-  max-width: var(--outer-wrapper-width);
-}
-
 .h-responsive-img {
   width: 100%;
   max-width: 750px;
   height: auto;
+}
+
+
+
+//
+// Spacers (for MSO 2016. TD's get set to 17px default needs an &nbsp; in the <td>)
+//
+.h-spacer-2 {
+  font-size: 2px;
+  line-height: 2px;
+}
+
+.h-spacer-5 {
+  font-size: 5px;
+  line-height: 5px;
+}
+
+.h-spacer-10 {
+  font-size: 10px;
+  line-height: 10px;
+}
+
+.h-spacer-15 {
+  font-size: 15px;
+  line-height: 15px;
 }

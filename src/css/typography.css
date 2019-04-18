@@ -1,0 +1,74 @@
+// ++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ++
+//
+//  Cobalt Email
+//  Typography
+//
+// ++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ++
+
+//
+// Body
+//
+.h-xs-text {
+  font-family: var(--font-family);
+  font-size: 12px;
+  line-height: 20px;
+  mso-line-height-rule: exactly;
+}
+
+.h-small-text {
+  font-family: var(--font-family);
+  font-size: 14px;
+  line-height: 24px;
+  mso-line-height-rule: exactly;
+}
+
+.h-default-text {
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: 26px;
+  mso-line-height-rule: exactly;
+}
+
+.h-large-text {
+  font-family: var(--font-family);
+  font-size: 18px;
+  line-height: 28px;
+  mso-line-height-rule: exactly;
+}
+
+.h-xl-text {
+  font-family: var(--font-family);
+  font-size: 20px;
+  line-height: 30px;
+  mso-line-height-rule: exactly;
+}
+
+
+
+//
+// Weights
+//
+.h-light-font-weight {
+  font-weight: var(--light-font-weight);
+}
+
+.h-regular-font-weight {
+  font-weight: var(--regular-font-weight);
+}
+
+.h-bold-font-weight {
+  font-weight: var(--bold-font-weight);
+}
+
+
+
+//
+// Colors
+//
+.h-dark-text-color {
+  color: var(--dark-text-color);
+}
+
+.h-medium-text-color {
+  color: var(--medium-text-color);
+}
