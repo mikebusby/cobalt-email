@@ -72,3 +72,20 @@
 .h-medium-text-color {
   color: var(--medium-text-color);
 }
+
+
+
+//
+// Alignment
+//
+.h-text-left-align {
+  text-align: left;
+}
+
+.h-text-center-align {
+  text-align: center;
+}
+
+.h-text-right-align {
+  text-align: right;
+}
