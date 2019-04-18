@@ -9,6 +9,10 @@
   max-width: var(--outer-wrapper-width);
 }
 
+.h-mobile-edge {
+  width: var(--mobile-edge);
+}
+
 .h-mobile-show {
   display: none;
 }
