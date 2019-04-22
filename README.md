@@ -12,7 +12,7 @@ Node & Yarn need to be installed
 
 ```yarn install```
 
-Then simply run ```npm run dev``` and navigate to ```http://localhost:1337```
+Then simply run ```yarn run dev``` and navigate to ```http://localhost:1337```
 
 ## License
 
