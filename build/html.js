@@ -22,7 +22,10 @@ module.exports = function(gulp, plugins, config) {
       }))
       .pipe(fileinclude({
         prefix: '@@',
-        basepath: 'src/tpl/'
+        basepath: 'src/tpl/',
+        context: {
+          'tblProps': 'border="0" cellpadding="0" cellspacing="0"'
+        }
       }))
       .pipe(gulp.dest(config.buildPath));
   }
