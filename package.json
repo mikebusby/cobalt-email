@@ -37,6 +37,11 @@
     "rucksack-css": "^1.0.2",
     "run-sequence": "^2.2.1"
   },
+  "browserslist": [
+    "last 2 version",
+    "not dead",
+    "not ie <= 11"
+  ],
   "author": "Mike Busby (busby.design)",
   "license": "MIT"
 }
