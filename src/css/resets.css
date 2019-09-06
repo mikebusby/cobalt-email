@@ -5,12 +5,15 @@
 //
 // ++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ++
 
+html {
+  height: 100% !important;
+}
+
 body { 
   width: 100% !important;
   height: 100% !important; 
   margin: 0 auto !important; 
   padding: 0 !important;
-  max-width: var(--outer-wrapper-width);
   font-family: var(--font-family);
 }
 
