@@ -9,7 +9,6 @@ const postcssColorMod = require('postcss-color-mod-function');
 const postcssNested = require('postcss-nested');
 const mixins = require('postcss-sassy-mixins');
 const conditionals = require('postcss-conditionals')
-const rucksack = require('rucksack-css');
 const cssnano = require('cssnano');
 
 module.exports = function(gulp, plugins, config) {
@@ -39,7 +38,6 @@ module.exports = function(gulp, plugins, config) {
         mixins(),
         postcssNested(),
         conditionals(),
-        rucksack(),
         cssnano(),
       ], { syntax: require('postcss-scss') }))
       .pipe(gulp.dest(config.buildPath + 'css/'));
