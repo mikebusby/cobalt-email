@@ -8,15 +8,14 @@ const postcssPresetEnv = require('postcss-preset-env');
 const postcssColorMod = require('postcss-color-mod-function');
 const postcssNested = require('postcss-nested');
 const mixins = require('postcss-sassy-mixins');
-const conditionals = require('postcss-conditionals');
-const postcssAssets = require('postcss-assets');
+const conditionals = require('postcss-conditionals')
 const rucksack = require('rucksack-css');
 const cssnano = require('cssnano');
 
 module.exports = function(gulp, plugins, config) {
   return function() {
-    return gulp
-      .src(config.srcPath + '/css/main.css')
+    const stream =
+      gulp.src(config.srcPath + '/css/main.css')
       .pipe(plugins.plumber({
         errorHandler: function(err) {
           plugins.notify.onError({
@@ -42,11 +41,9 @@ module.exports = function(gulp, plugins, config) {
         conditionals(),
         rucksack(),
         cssnano(),
-        postcssAssets({
-          basePath: config.staticPath,
-          loadPaths: ['img', 'sprite-img']
-        })
       ], { syntax: require('postcss-scss') }))
       .pipe(gulp.dest(config.buildPath + 'css/'));
+
+    return stream;
   }
 }

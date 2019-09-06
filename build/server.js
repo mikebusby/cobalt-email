@@ -2,19 +2,22 @@
 // Localhost server task
 //
 
+const browserSync = require('browser-sync');
+
 module.exports = function(gulp, plugins, config) {
-  return function () {
-    gulp
-      .src(config.buildPath)
-      .pipe(plugins.webserver({
-        port: 1337,
-        fallback: 'template.html',
-        directoryListing: {
-          enable: true,
-          path: 'dist'
+  return function() {
+    const stream = 
+      browserSync.init({
+        server: {
+          baseDir: './dist',
+          directory: true
         },
-        livereload: true
-      })
-    );
+        open: false,
+        notify: false,
+        port: 1337,
+        watch: true,
+      });
+    
+    return stream;
   }
 }

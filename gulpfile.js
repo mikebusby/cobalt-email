@@ -13,7 +13,6 @@
 
 // Require Gulp & Plugins
 const gulp = require('gulp');
-const runSequence = require('run-sequence');
 const plugins = require('gulp-load-plugins')();
 
 // Config variables
@@ -34,24 +33,27 @@ gulp.task('web-server', require('./build/server')(gulp, plugins, config));
 
 // Watch file changes
 gulp.task('watch', function() {
-  gulp.watch(config.srcPath + '/**/*', ['update']);
-  gulp.watch(config.staticPath + 'img/*', ['copy-img']);
+  gulp.watch(config.srcPath + '**/*', gulp.series('update'));
+  gulp.watch(config.staticPath + 'img/*', gulp.series('copy-img'));
 });
 
 // Update build files on file change
-gulp.task('update', function(callback) {
-  runSequence('styles', 'html', 'inline-css', callback);
-});
+gulp.task('update', gulp.series(
+  'styles',
+  'html',
+  'inline-css'
+));
+
+// Run build tasks
+gulp.task('default', gulp.series(
+  'styles',
+  'html',
+  'inline-css',
+  'copy-img'
+));
 
 // Run development tasks
-gulp.task('default', function(callback) {
-  runSequence(
-    'styles',
-    'html',
-    'inline-css',
-    'copy-img',
-    'watch',
-    'web-server',
-    callback
-  );
-});
+gulp.task('dev', gulp.parallel(
+  'watch',
+  'web-server'
+));

@@ -6,8 +6,8 @@ const fileinclude = require('gulp-file-include');
 
 module.exports = function(gulp, plugins, config) {
   return function() {
-    return gulp
-      .src([
+    const stream = 
+      gulp.src([
         config.tplPath + '**/*.html',
         '!' + config.tplPath + '_**/_*/',
         '!' + config.tplPath + '**/_*/**/*'
@@ -28,5 +28,7 @@ module.exports = function(gulp, plugins, config) {
         }
       }))
       .pipe(gulp.dest(config.buildPath));
+    
+    return stream;
   }
 }
